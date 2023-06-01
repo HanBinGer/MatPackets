@@ -4,10 +4,10 @@ syms f(z);
 f(z) = z^3 - 1;
 df=diff(f);
 
-% x = linspace(-2, 2, 500);
-% y = linspace(-2,2,500);
-% [X,Y] = meshgrid(x,y);
-% K = complex(X,Y);
+x = linspace(-2, 2, 500);
+y = linspace(-2,2,500);
+[X,Y] = meshgrid(x,y);
+K = complex(X,Y);
 
 x0 = sym(K,'d');
 x=x0-f(x0)/df(x0);
@@ -16,3 +16,4 @@ for i = 1:60
     x0=x;
     x=x0-f(x0)/df(x0);
 end
+x
